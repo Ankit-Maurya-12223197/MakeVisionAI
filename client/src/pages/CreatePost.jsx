@@ -26,7 +26,7 @@ const CreatePost = () => {
             try {
                 setGeneratingImg(true);
 
-                const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/v1/dalle/generate-image`, {
+                const response = await fetch(`${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/dalle/generate-image`, {
                     method: 'POST',
                     headers: {  "Content-Type": "application/json", },
                     body: JSON.stringify({ prompt: form.prompt }),
@@ -64,7 +64,7 @@ const CreatePost = () => {
             setLoading(true);
 
             try{
-                const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/v1/post`,{
+                const response = await fetch(`${import.meta.env.REACT_APP_API_BASE_URL}/api/v1/post`,{
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
